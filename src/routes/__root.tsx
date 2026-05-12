@@ -4,12 +4,9 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
 import { Toaster } from "sonner";
 
-import appCss from "../styles.css?url";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
@@ -67,62 +64,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Beyond Stays Clan — Premium PG & Coliving in Nanakramguda, Hyderabad" },
-      {
-        name: "description",
-        content:
-          "Affordable premium PG living in Hyderabad. Fully furnished rooms with food included for students and IT professionals at Nanakramguda. Book today.",
-      },
-      { name: "author", content: "Beyond Stays Clan" },
-      { property: "og:title", content: "Beyond Stays Clan — Premium PG & Coliving in Nanakramguda, Hyderabad" },
-      {
-        property: "og:description",
-        content:
-          "Premium coliving in Nanakramguda. Designer rooms, curated meals, modern amenities — built for students and professionals.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Beyond Stays Clan — Premium PG & Coliving in Nanakramguda, Hyderabad" },
-      { name: "description", content: "Beyond Stays Clan offers a premium, modern, and responsive website for PG hostel and coliving accommodations." },
-      { property: "og:description", content: "Beyond Stays Clan offers a premium, modern, and responsive website for PG hostel and coliving accommodations." },
-      { name: "twitter:description", content: "Beyond Stays Clan offers a premium, modern, and responsive website for PG hostel and coliving accommodations." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5a018e25-954a-49b7-a00f-48c17e8441a5/id-preview-ce96bc37--f77219ec-6f6e-4d2c-b284-0f32e525ce90.lovable.app-1778520315995.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5a018e25-954a-49b7-a00f-48c17e8441a5/id-preview-ce96bc37--f77219ec-6f6e-4d2c-b284-0f32e525ce90.lovable.app-1778520315995.png" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap",
-      },
-    ],
-  }),
-  shellComponent: RootShell,
-  component: RootComponent,
-  notFoundComponent: NotFoundComponent,
-  errorComponent: ErrorComponent,
-});
-
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
+  {
+    component: RootComponent,
+    notFoundComponent: NotFoundComponent,
+    errorComponent: ErrorComponent,
+  },
+);
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();

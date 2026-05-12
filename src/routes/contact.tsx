@@ -5,16 +5,6 @@ import { Phone, Mail, MapPin, MessageCircle, Send } from "lucide-react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact Beyond Stays Clan — PG Hostel in Nanakramguda, Hyderabad" },
-      {
-        name: "description",
-        content:
-          "Get in touch with Beyond Stays Clan PG and coliving in Nanakramguda. Call +91 91005 31555, email beyondstays.clan@gmail.com, or visit us.",
-      },
-    ],
-  }),
   component: ContactPage,
 });
 
