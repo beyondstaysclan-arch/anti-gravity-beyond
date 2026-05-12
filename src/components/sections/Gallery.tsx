@@ -4,12 +4,16 @@ import muralDining from "@/assets/gallery-mural-dining.jpg";
 import studyDesk from "@/assets/gallery-study-desk.jpg";
 import indoorPlant from "@/assets/gallery-indoor-plant.jpg";
 import deskArea from "@/assets/gallery-desk-area.jpg";
+import neonCard from "@/assets/gallery-neon-card.jpg";
+import colorfulCard from "@/assets/gallery-colorful-card.jpg";
 
 const IMAGES = [
   { src: roomCozy, alt: "Cozy room with study desk", className: "md:col-span-2 md:row-span-2 aspect-square md:aspect-auto" },
   { src: muralDining, alt: "Vibrant mural dining area", className: "aspect-[4/3]" },
+  { src: neonCard, alt: "Beyond Stays neon branding", className: "aspect-[4/3]" },
   { src: studyDesk, alt: "Sunlit study desk", className: "aspect-[4/3]" },
   { src: indoorPlant, alt: "Indoor plant décor", className: "aspect-[4/3]" },
+  { src: colorfulCard, alt: "Beyond Stays colorful card", className: "md:col-span-2 aspect-[16/9]" },
   { src: deskArea, alt: "Workspace with striped rug", className: "md:col-span-2 aspect-[16/9]" },
 ];
 

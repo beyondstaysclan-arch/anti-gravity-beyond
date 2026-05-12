@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ShieldCheck, BedDouble, UtensilsCrossed, Sparkles } from "lucide-react";
-import about from "@/assets/about-room.jpg";
+import about from "@/assets/about-signboard.jpg";
 
 const FEATURES = [
   { icon: ShieldCheck, title: "Safe & Secure", desc: "24/7 CCTV and access-controlled entry." },

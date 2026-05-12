@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowRight, Phone } from "lucide-react";
-import hero from "@/assets/hero-lounge.jpg";
+import hero from "@/assets/hero-brand-card.jpg";
 
 export function Hero() {
   return (
