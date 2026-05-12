@@ -46,18 +46,18 @@ function ContactPage() {
   return (
     <>
       {/* Page header */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-surface to-background">
+      <section className="pt-32 pb-16 bg-background">
         <div className="mx-auto max-w-7xl px-5 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Contact</span>
-            <h1 className="mt-3 text-4xl lg:text-6xl font-extrabold tracking-tight text-ink text-balance">
+            <span className="section-label justify-center mb-4">Contact</span>
+            <h1 className="mt-4 text-4xl lg:text-6xl font-extrabold tracking-tight text-white text-balance">
               Let's get you <span className="text-gradient-brand">moved in.</span>
             </h1>
-            <p className="mt-5 text-ink-soft text-lg max-w-xl mx-auto">
+            <p className="mt-5 text-white/45 text-lg max-w-xl mx-auto">
               Drop us a message, give us a call, or pop in for a tour. We respond within a few hours.
             </p>
           </motion.div>
@@ -78,13 +78,13 @@ function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group p-7 rounded-2xl bg-surface ring-1 ring-border hover-lift block"
+                className="group p-7 rounded-2xl bg-surface border border-white/[0.06] card-glow block"
               >
                 <div className="size-12 grid place-items-center rounded-xl bg-primary text-primary-foreground mb-5 group-hover:scale-110 transition-transform">
                   <item.icon className="size-5" />
                 </div>
-                <h3 className="font-bold text-ink text-lg">{item.title}</h3>
-                <p className="mt-2 text-sm text-ink-soft leading-relaxed">{item.value}</p>
+                <h3 className="font-bold text-white text-lg">{item.title}</h3>
+                <p className="mt-2 text-sm text-white/45 leading-relaxed">{item.value}</p>
               </motion.a>
             ))}
           </div>
@@ -100,10 +100,10 @@ function ContactPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-surface rounded-3xl p-8 lg:p-10 ring-1 ring-border"
+            className="bg-surface rounded-3xl p-8 lg:p-10 border border-white/[0.06]"
           >
-            <h2 className="text-2xl font-extrabold text-ink mb-2">Send an enquiry</h2>
-            <p className="text-ink-soft text-sm mb-8">We'll get back to you within a few hours.</p>
+            <h2 className="text-2xl font-extrabold text-white mb-2">Send an enquiry</h2>
+            <p className="text-white/40 text-sm mb-8">We'll get back to you within a few hours.</p>
 
             <div className="grid sm:grid-cols-2 gap-4">
               <Field name="name" label="Full name" placeholder="Your name" required />
@@ -112,25 +112,25 @@ function ContactPage() {
                 <Field name="email" label="Email" type="email" placeholder="you@email.com" required />
               </div>
               <div className="sm:col-span-2">
-                <label className="block text-sm font-medium text-ink mb-2">Room type</label>
+                <label className="block text-sm font-medium text-white/70 mb-2">Room type</label>
                 <select
                   name="room"
                   required
-                  className="w-full bg-background border border-border rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition"
+                  className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/30 transition appearance-none"
                 >
-                  <option value="">Select a plan</option>
-                  <option>2-Sharing Premium · ₹20,000/mo</option>
-                  <option>3-Sharing Classic · ₹17,000/mo</option>
-                  <option>Not sure yet</option>
+                  <option value="" className="bg-[#141414]">Select a plan</option>
+                  <option className="bg-[#141414]">2-Sharing Premium · ₹20,000/mo</option>
+                  <option className="bg-[#141414]">3-Sharing Classic · ₹17,000/mo</option>
+                  <option className="bg-[#141414]">Not sure yet</option>
                 </select>
               </div>
               <div className="sm:col-span-2">
-                <label className="block text-sm font-medium text-ink mb-2">Message</label>
+                <label className="block text-sm font-medium text-white/70 mb-2">Message</label>
                 <textarea
                   name="message"
                   rows={4}
                   placeholder="Tell us about your move-in date and any questions..."
-                  className="w-full bg-background border border-border rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition resize-none"
+                  className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/30 transition resize-none"
                 />
               </div>
             </div>
@@ -159,7 +159,7 @@ function ContactPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl overflow-hidden ring-1 ring-border min-h-[420px] lg:min-h-0"
+            className="rounded-3xl overflow-hidden border border-white/[0.06] min-h-[420px] lg:min-h-0"
           >
             <iframe
               title="Beyond Stays Clan location"
@@ -190,13 +190,13 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-ink mb-2">{label}</label>
+      <label className="block text-sm font-medium text-white/70 mb-2">{label}</label>
       <input
         name={name}
         type={type}
         placeholder={placeholder}
         required={required}
-        className="w-full bg-background border border-border rounded-xl px-4 py-3 text-ink placeholder:text-ink-soft/60 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition"
+        className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/30 transition"
       />
     </div>
   );

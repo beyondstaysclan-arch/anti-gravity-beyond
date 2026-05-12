@@ -27,10 +27,13 @@ export function Testimonials() {
     <section className="py-24 lg:py-32 bg-background">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Testimonials</span>
-          <h2 className="mt-3 text-4xl lg:text-5xl font-extrabold tracking-tight text-ink text-balance">
-            Loved by students & professionals.
+          <span className="section-label justify-center mb-4">Client Stories · Testimonials</span>
+          <h2 className="mt-4 text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance">
+            Inspiring resident experiences
           </h2>
+          <p className="mt-5 text-white/45 text-lg">
+            Join us and become our next success story.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -41,7 +44,7 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="relative bg-surface rounded-3xl p-7 ring-1 ring-border hover-lift"
+              className="relative bg-surface rounded-3xl p-7 border border-white/[0.06] card-glow"
             >
               <Quote className="absolute top-6 right-6 size-8 text-primary/15" />
               <div className="flex gap-0.5 mb-5">
@@ -49,14 +52,14 @@ export function Testimonials() {
                   <Star key={idx} className="size-4 fill-primary text-primary" />
                 ))}
               </div>
-              <p className="text-ink leading-relaxed mb-7">"{r.text}"</p>
-              <div className="flex items-center gap-3 pt-5 border-t border-border">
-                <div className="size-11 grid place-items-center rounded-full bg-gradient-brand text-white font-bold">
+              <p className="text-white/70 leading-relaxed mb-7">"{r.text}"</p>
+              <div className="flex items-center gap-3 pt-5 border-t border-white/[0.06]">
+                <div className="size-11 grid place-items-center rounded-full bg-gradient-brand text-white font-bold text-sm">
                   {r.initials}
                 </div>
                 <div>
-                  <p className="font-semibold text-ink">{r.name}</p>
-                  <p className="text-xs text-ink-soft">{r.role}</p>
+                  <p className="font-semibold text-white">{r.name}</p>
+                  <p className="text-xs text-white/40">{r.role}</p>
                 </div>
               </div>
             </motion.div>

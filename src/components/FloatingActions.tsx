@@ -16,7 +16,7 @@ export function FloatingActions() {
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Scroll to top"
-          className="size-12 grid place-items-center rounded-full bg-ink text-white shadow-xl hover:scale-110 active:scale-95 transition-transform animate-fade-in"
+          className="size-12 grid place-items-center rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-white shadow-xl hover:bg-white/20 hover:scale-110 active:scale-95 transition-all animate-fade-in"
         >
           <ArrowUp className="size-5" />
         </button>
@@ -24,7 +24,7 @@ export function FloatingActions() {
       <a
         href="tel:+919100531555"
         aria-label="Call us"
-        className="size-13 size-12 grid place-items-center rounded-full bg-primary text-primary-foreground shadow-xl shadow-primary/30 hover:scale-110 active:scale-95 transition-transform"
+        className="size-12 grid place-items-center rounded-full bg-primary text-primary-foreground shadow-xl shadow-primary/30 hover:scale-110 active:scale-95 transition-transform"
       >
         <Phone className="size-5" />
       </a>

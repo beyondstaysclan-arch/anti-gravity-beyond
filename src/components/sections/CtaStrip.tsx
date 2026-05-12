@@ -3,36 +3,37 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 
 export function CtaStrip() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-24 lg:py-32 bg-surface">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-brand p-10 lg:p-16 shadow-elegant">
-          <div className="absolute -top-24 -right-24 size-72 rounded-full bg-white/10 blur-2xl" />
-          <div className="absolute -bottom-32 -left-12 size-72 rounded-full bg-white/10 blur-2xl" />
-          <div className="relative grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-3xl lg:text-5xl font-extrabold text-white tracking-tight text-balance">
-                Ready to make Beyond Clan home?
-              </h2>
-              <p className="mt-4 text-white/90 text-lg max-w-lg">
-                Limited rooms available this season. Book a visit or chat with us on WhatsApp.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-3 lg:justify-end">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 via-surface to-surface border border-white/[0.06] p-10 lg:p-20">
+          {/* Decorative elements */}
+          <div className="absolute -top-32 -right-32 size-96 rounded-full bg-primary/5 blur-3xl" />
+          <div className="absolute -bottom-40 -left-20 size-80 rounded-full bg-primary/5 blur-3xl" />
+
+          <div className="relative text-center max-w-3xl mx-auto">
+            <span className="section-label justify-center mb-6">Be Part of Our Journey</span>
+            <h2 className="text-4xl lg:text-6xl font-extrabold text-white tracking-tight text-balance">
+              We transform spaces. Your comfort is next.
+            </h2>
+            <p className="mt-6 text-white/45 text-lg max-w-xl mx-auto leading-relaxed">
+              Start your journey now by booking a visit or chatting with our team. Limited rooms available this season.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-white text-primary px-7 py-4 rounded-xl font-semibold shadow-xl hover:scale-[1.03] active:scale-95 transition-transform"
+                className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-primary-foreground px-8 py-4 rounded-xl font-semibold shadow-2xl shadow-primary/25 transition-all hover:scale-[1.03] active:scale-95"
               >
                 Book a Visit
-                <ArrowRight className="size-4" />
+                <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href="https://wa.me/919100531555"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 bg-ink/30 hover:bg-ink/50 text-white border border-white/30 backdrop-blur px-7 py-4 rounded-xl font-semibold transition-colors"
+                className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-all"
               >
                 <MessageCircle className="size-4" />
-                WhatsApp Us
+                Chat on WhatsApp
               </a>
             </div>
           </div>

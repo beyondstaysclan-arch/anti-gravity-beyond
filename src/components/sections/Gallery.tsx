@@ -28,13 +28,13 @@ export function Gallery() {
     <section id="gallery" className="py-24 lg:py-32 bg-surface">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Gallery</span>
-          <h2 className="mt-3 text-4xl lg:text-5xl font-extrabold tracking-tight text-ink text-balance">
+          <span className="section-label justify-center mb-4">Gallery · Spaces</span>
+          <h2 className="mt-4 text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance">
             A peek inside Beyond Clan.
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[220px] gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[220px] gap-3">
           {IMAGES.map((img, i) => (
             <motion.div
               key={i}
@@ -42,7 +42,7 @@ export function Gallery() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: (i % 3) * 0.08 }}
-              className={`group relative overflow-hidden rounded-2xl ring-1 ring-border ${img.className}`}
+              className={`group relative overflow-hidden rounded-2xl border border-white/[0.06] ${img.className}`}
             >
               <img
                 src={img.src}
@@ -52,8 +52,8 @@ export function Gallery() {
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <span className="absolute bottom-4 left-4 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <span className="absolute bottom-4 left-4 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-2 group-hover:translate-y-0">
                 {img.alt}
               </span>
             </motion.div>
@@ -63,4 +63,3 @@ export function Gallery() {
     </section>
   );
 }
-
