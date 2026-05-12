@@ -73,7 +73,7 @@ export function Hero() {
                 transition={{ duration: 0.1 }}
               >
                 <motion.span
-                  className="block text-gradient-brand italic text-3xl sm:text-4xl lg:text-6xl"
+                  className="block text-gradient-brand italic text-[24px] lg:text-[36px] leading-[1.2]"
                   initial={{ y: "110%" }}
                   animate={{ y: 0 }}
                   transition={{ duration: 0.9, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
