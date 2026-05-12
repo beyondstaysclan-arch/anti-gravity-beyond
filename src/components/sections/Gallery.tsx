@@ -1,11 +1,16 @@
 import { motion } from "motion/react";
+import roomCozy from "@/assets/gallery-room-cozy.jpg";
+import muralDining from "@/assets/gallery-mural-dining.jpg";
+import studyDesk from "@/assets/gallery-study-desk.jpg";
+import indoorPlant from "@/assets/gallery-indoor-plant.jpg";
+import deskArea from "@/assets/gallery-desk-area.jpg";
 
 const IMAGES = [
-  { src: "/gallery-images/media__1778524875003.jpg", alt: "Cozy room with study desk", className: "md:col-span-2 md:row-span-2 aspect-square md:aspect-auto" },
-  { src: "/gallery-images/media__1778524875037.jpg", alt: "Vibrant mural dining area", className: "aspect-[4/3]" },
-  { src: "/gallery-images/media__1778524875053.jpg", alt: "Sunlit study desk", className: "aspect-[4/3]" },
-  { src: "/gallery-images/media__1778524875061.jpg", alt: "Indoor plant décor", className: "aspect-[4/3]" },
-  { src: "/gallery-images/media__1778524875095.jpg", alt: "Workspace with striped rug", className: "md:col-span-2 aspect-[16/9]" },
+  { src: roomCozy, alt: "Cozy room with study desk", className: "md:col-span-2 md:row-span-2 aspect-square md:aspect-auto" },
+  { src: muralDining, alt: "Vibrant mural dining area", className: "aspect-[4/3]" },
+  { src: studyDesk, alt: "Sunlit study desk", className: "aspect-[4/3]" },
+  { src: indoorPlant, alt: "Indoor plant décor", className: "aspect-[4/3]" },
+  { src: deskArea, alt: "Workspace with striped rug", className: "md:col-span-2 aspect-[16/9]" },
 ];
 
 export function Gallery() {

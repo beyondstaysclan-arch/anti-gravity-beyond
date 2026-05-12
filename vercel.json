@@ -1,0 +1,15 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "outputDirectory": "dist/client"
+}
