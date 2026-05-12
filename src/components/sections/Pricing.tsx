@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { Check, UtensilsCrossed, Wifi, ArrowRight } from "lucide-react";
-import room2 from "@/assets/room-workspace.jpg";
-import room3 from "@/assets/room-workspace.jpg";
+import room2 from "@/assets/room-green-bed.jpg";
+import room3 from "@/assets/room-overhead.jpg";
 
 const ROOMS = [
   {
