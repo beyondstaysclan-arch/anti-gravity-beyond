@@ -25,12 +25,12 @@ const IMAGES = [
 
 export function Gallery() {
   return (
-    <section id="gallery" className="py-24 lg:py-32 bg-surface">
+    <section id="gallery" className="py-28 lg:py-36 bg-surface">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="section-label justify-center mb-4">Gallery · Spaces</span>
-          <h2 className="mt-4 text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance">
-            A peek inside Beyond Clan.
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="section-label justify-center mb-5 block">Gallery · Spaces</span>
+          <h2 className="text-4xl lg:text-[3.5rem] font-bold tracking-tight text-white text-balance leading-[1.1]">
+            A peek inside <em className="text-gradient-brand not-italic">Beyond Clan.</em>
           </h2>
         </div>
 
@@ -38,11 +38,11 @@ export function Gallery() {
           {IMAGES.map((img, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.93 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, delay: (i % 3) * 0.08 }}
-              className={`group relative overflow-hidden rounded-2xl border border-white/[0.06] ${img.className}`}
+              transition={{ duration: 0.7, delay: (i % 4) * 0.06, ease: [0.22, 1, 0.36, 1] }}
+              className={`group relative overflow-hidden rounded-[18px] border border-white/[0.04] grain-overlay ${img.className}`}
             >
               <img
                 src={img.src}
@@ -50,10 +50,10 @@ export function Gallery() {
                 width={1200}
                 height={900}
                 loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="absolute bottom-4 left-4 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-2 group-hover:translate-y-0">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 z-[3]" />
+              <span className="absolute bottom-4 left-4 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0 z-[4]">
                 {img.alt}
               </span>
             </motion.div>

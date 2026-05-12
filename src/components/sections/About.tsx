@@ -18,48 +18,51 @@ const STATS = [
 
 export function About() {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-background">
+    <section id="about" className="py-28 lg:py-36 bg-background">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Section header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-20">
           <div className="max-w-2xl">
-            <span className="section-label mb-4">About Us · metrics & milestones</span>
-            <h2 className="mt-4 text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance">
-              Behind every statistic pulses a human story
+            <span className="section-label mb-5 block">About Us · metrics & milestones</span>
+            <h2 className="text-4xl lg:text-[3.5rem] font-bold tracking-tight text-white text-balance leading-[1.1]">
+              Behind every statistic<br />pulses a <em className="text-gradient-brand not-italic">human story</em>
             </h2>
           </div>
-          <p className="text-white/50 max-w-md text-lg leading-relaxed">
+          <p className="text-white/40 max-w-sm text-[17px] leading-relaxed font-light">
             Transforming student and professional living, room by thoughtfully designed room.
           </p>
         </div>
 
         {/* Stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px mb-24 bg-white/[0.04] rounded-3xl overflow-hidden">
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-surface rounded-2xl p-6 lg:p-8 border border-white/[0.06] text-center card-glow"
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="bg-background p-8 lg:p-10 text-center"
             >
-              <p className="text-4xl lg:text-5xl font-extrabold text-primary leading-none">{stat.value}</p>
-              <p className="mt-3 text-sm text-white/40 uppercase tracking-wider font-medium">{stat.label}</p>
+              <p className="text-4xl lg:text-5xl font-bold text-primary leading-none font-[Playfair_Display,serif]">{stat.value}</p>
+              <p className="mt-3 text-xs text-white/30 uppercase tracking-[0.2em] font-medium">{stat.label}</p>
             </motion.div>
           ))}
         </div>
 
+        {/* Gradient separator */}
+        <div className="hr-gradient mb-24" />
+
         {/* Image + Features grid */}
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/30">
+            <div className="relative rounded-[24px] overflow-hidden shadow-2xl shadow-black/40 grain-overlay">
               <img
                 src={about}
                 alt="Premium furnished bedroom at Beyond Stays Clan"
@@ -68,31 +71,26 @@ export function About() {
                 loading="lazy"
                 className="w-full aspect-[4/5] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-            </div>
-            <div className="hidden md:block absolute -bottom-6 -right-6 bg-primary text-primary-foreground rounded-2xl px-6 py-5 shadow-elegant animate-pulse-glow">
-              <p className="text-3xl font-extrabold leading-none">100+</p>
-              <p className="text-xs uppercase tracking-widest mt-1 opacity-90">Happy Residents</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-[1]" />
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-7"
           >
-            <h3 className="text-3xl lg:text-4xl font-extrabold tracking-tight text-white text-balance">
+            <h3 className="text-3xl lg:text-4xl font-bold tracking-tight text-white text-balance leading-[1.15] font-[Playfair_Display,serif]">
               A new standard for student & professional living.
             </h3>
-            <p className="mt-5 text-white/50 text-lg leading-relaxed">
+            <p className="mt-6 text-white/40 text-[17px] leading-relaxed font-light">
               Beyond Stays Clan is a premium PG and coliving residence in Nanakramguda, designed for
-              students and IT professionals who want comfort, community, and zero hassle. Move in, settle
-              down, and focus on what matters.
+              students and IT professionals who want comfort, community, and zero hassle.
             </p>
 
-            <div className="mt-10 grid sm:grid-cols-2 gap-4">
+            <div className="mt-12 grid sm:grid-cols-2 gap-4">
               {FEATURES.map((f, i) => (
                 <motion.div
                   key={f.title}
@@ -100,14 +98,14 @@ export function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="flex gap-4 p-5 rounded-2xl bg-surface border border-white/[0.06] card-glow"
+                  className="flex gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] card-glow group"
                 >
-                  <div className="size-11 grid place-items-center rounded-xl bg-primary/10 text-primary shrink-0">
+                  <div className="size-11 grid place-items-center rounded-xl bg-primary/10 text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                     <f.icon className="size-5" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white">{f.title}</h4>
-                    <p className="mt-1 text-sm text-white/45 leading-relaxed">{f.desc}</p>
+                    <h4 className="font-semibold text-white text-[15px]">{f.title}</h4>
+                    <p className="mt-1 text-sm text-white/35 leading-relaxed">{f.desc}</p>
                   </div>
                 </motion.div>
               ))}
